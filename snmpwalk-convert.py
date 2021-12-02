@@ -100,7 +100,7 @@ if __name__ == "__main__":
     main()
     
 
-print(len(results.keys()))
+# print(len(results.keys()))
 # print(output.values())
 
 end = time.time()
