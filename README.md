@@ -1,5 +1,7 @@
 # snmpwalk-convert
-Convert SNMP walk with MIB names to OID - Helps with snmpsim simulation which requires NetSNMP::snmpwalk output with '-ObentU' Flag for conversion.
+Convert SNMP walk with MIB names to OID 
+
+Helps with [snmpsim](https://github.com/etingof/snmpsim) simulation which requires NetSNMP::snmpwalk output with '-ObentU' Flag for conversion.
 
 # Sample
 ```
