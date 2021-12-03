@@ -52,6 +52,7 @@ def get_snmp_mibname():
 # Runs snmptranslate for MIB to OID asyncronously
 async def run(cmd):
     command = f'snmptranslate -On -Pe -Ln -IR {cmd}'
+    # command = f'snmptranslate -M <mib-path> -On -Pe -Ln -IR {cmd}'
     proc = await asyncio.create_subprocess_shell(command,stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
     stdout, stderr= await proc.communicate()
     if stdout:
