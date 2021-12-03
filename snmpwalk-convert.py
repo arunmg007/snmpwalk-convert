@@ -131,4 +131,4 @@ if __name__ == "__main__":
 
 end = time.time()
 total_time = end - start
-print("It took {} seconds to make {} lines with {} MIBs for snmptranslate OID calls".format(total_time, total_lines[0], len(results.keys())))
+print("It took {} seconds to convert {} lines and snmptranslate {} unique MIBs to OIDs".format(total_time, total_lines[0], len(results.keys())))
