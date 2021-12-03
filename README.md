@@ -3,6 +3,17 @@ Convert SNMP walk with MIB names to OID
 
 Helps with [snmpsim](https://github.com/etingof/snmpsim) simulation which requires NetSNMP::snmpwalk output with '-ObentU' Flag for conversion.
 
+# Dependency
+
+snmptranslator tool from [Net-SNMP from Github](https://github.com/net-snmp/net-snmp) and MIB files from different members
+
+Replace line 54 to support Custom MIB Path
+```
+command = f'snmptranslate -On -Pe -Ln -IR {cmd}'
+to
+command = f'snmptranslate -M <mib-path> -On -Pe -Ln -IR {cmd}'
+```
+
 # Sample
 ```
 ❯ snmpwalk-convert.py snmpwalk.txt
