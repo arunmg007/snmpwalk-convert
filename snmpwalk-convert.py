@@ -17,6 +17,7 @@ total_lines = []
 
 start = time.time()
 
+# Convert ipv6 HexaDecimal to Decimal OID Format
 def convert_ipv6_to_oid(ipv6):
     oid = ''
     count = 0
