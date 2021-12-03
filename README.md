@@ -17,7 +17,8 @@ command = f'snmptranslate -M <mib-path> -On -Pe -Ln -IR {cmd}'
 # Sample
 ```
 ❯ ./snmpwalk-convert.py snmpwalk.txt
-It took 1.142712116241455 seconds to make 17414 lines with 430 MIBs for snmptranslate OID calls
+OIDs Converted: 100%|████████████████████| 430/430 [00:01<00:00, 339.31it/s]
+It took 1.444321632385254 seconds to convert 17414 lines and snmptranslate 430 unique MIBs to OIDs
 ```
 
 ```
