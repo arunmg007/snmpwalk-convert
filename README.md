@@ -7,18 +7,21 @@ Helps with [snmpsim](https://github.com/etingof/snmpsim) simulation which requir
 
 snmptranslator tool from [Net-SNMP from Github](https://github.com/net-snmp/net-snmp) and MIB files from different members
 
-Replace line 54 to support Custom MIB Path
+Replace line 54 to support Custom MIB Path and all MIB files
 ```
 command = f'snmptranslate -On -Pe -Ln -IR {cmd}'
 to
 command = f'snmptranslate -M <mib-path> -On -Pe -Ln -IR {cmd}'
+or
+command = f'snmptranslate -m ALL -M <mib-path> -On -Pe -Ln -IR {cmd}'
 ```
 
 # Sample
 ```
 ❯ ./snmpwalk-convert.py snmpwalk.txt
-OIDs Converted: 100%|████████████████████| 430/430 [00:01<00:00, 339.31it/s]
-It took 1.444321632385254 seconds to convert 17414 lines and snmptranslate 430 unique MIBs to OIDs
+OIDs Converted: 100%|████████████████████| 1306/1306 [00:03<00:00, 380.49it/s]
+It took 4.562106370925903sec to convert 39942 lines & snmptranslate 1306 unique MIBs to OIDs
+6 OIDs not translated and skipped. Check data-snmpwalk.json for Errors
 ```
 
 ```
