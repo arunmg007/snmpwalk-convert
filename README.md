@@ -7,7 +7,7 @@ Helps with [snmpsim](https://github.com/etingof/snmpsim) simulation which requir
 
 snmptranslator tool from [Net-SNMP from Github](https://github.com/net-snmp/net-snmp) and MIB files from different members
 
-Replace line 54 to support Custom MIB Path and all MIB files
+Replace line 123 to support Custom MIB Path and all MIB files
 ```
 command = f'snmptranslate -On -Pe -Ln -IR {cmd}'
 to
