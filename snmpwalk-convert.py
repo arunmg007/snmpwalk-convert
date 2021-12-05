@@ -105,8 +105,9 @@ def get_snmp_mibname():
             # We are going to guess this based on the available pack output
             # Insist on getting Net-SNMP Snmpwalk with -Ob flag
             # The possibility are that if a Mac Adderss with almost similar kind can get duplicated during OID conversion.
-            snmp_hexa_perl_pack = re.search(r"\.\'([\S]+)\' = STRING:", line, flags=re.I).group(1)
-            data['dot1'][snmp_hexa_perl_pack] = convert_hexa_to_oid(line.split('STRING:')[1].strip())
+            if re.search(r"\.\'[\S]+\' = STRING:", line, flags=re.I):
+                snmp_hexa_perl_pack = re.search(r"\.\'([\S]+)\' = STRING:", line, flags=re.I).group(1)
+                data['dot1'][snmp_hexa_perl_pack] = convert_hexa_to_oid(line.split('STRING:')[1].strip())
             filter_list.append(line.split('.')[0])
         elif re.search(r'=', line, flags=re.I):
             filter_list.append(line.split('.')[0])
@@ -284,4 +285,4 @@ end = time.time()
 # Getting Time difference
 total_time = end - start
 # Final Output
-print("It took {}sec to convert {} lines & snmptranslate {} unique MIBs to OIDs\n{} OIDs not translated and skipped. Check results.json for Errors".format(total_time, data['total_lines'][0], data['unique_oids'][0], len(data['error'].keys())))
+print("It took {}sec to convert {} lines & snmptranslate {} unique MIBs to OIDs\n{} OIDs not translated and skipped. Check {} for Errors".format(total_time, data['total_lines'][0], data['unique_oids'][0], len(data['error'].keys()), data_file))
